@@ -70,15 +70,15 @@ const App = () => {
       <div className="App">
         <Navbar cartQuantity={cartQuantity} />
         <Switch>
-          <Route exact path="/">
+          <Route exact path={process.env.PUBLIC_URL + '/'}>
             <Homepage />
           </Route>
-          <Route exact path="/shop">
+          <Route exact path={process.env.PUBLIC_URL + '/shop'}>
             <Shop formatCurrency={formatCurrency} />
           </Route>
           <Route
             exact
-            path="/shop/:id"
+            path={process.env.PUBLIC_URL + '/shop/:id'}
             render={(routeProps) => (
               <Product
                 product={findItem(routeProps.match.params.id)}
@@ -87,7 +87,7 @@ const App = () => {
               />
             )}
           />
-          <Route exact path="/cart">
+          <Route exact path={process.env.PUBLIC_URL + '/cart'}>
             <Cartpage
               items={cartItems}
               totalCost={totalCost}

@@ -7,13 +7,13 @@ const Navbar = ({ cartQuantity }) => {
     <nav className="nav-container">
       <h3>Olive Hut</h3>
       <ul className="nav-links">
-        <Link to="/">
+        <Link to={process.env.PUBLIC_URL + '/'}>
           <li>Home</li>
         </Link>
-        <Link to="/shop">
+        <Link to={process.env.PUBLIC_URL + '/shop'}>
           <li>Shop</li>
         </Link>
-        <Link to="/cart">
+        <Link to={process.env.PUBLIC_URL + '/cart'}>
           <li>Cart ({cartQuantity})</li>
         </Link>
       </ul>

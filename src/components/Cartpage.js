@@ -10,7 +10,7 @@ const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, 
       <div>
 
         <p>It's looking a little empty in here... Add some olives to your cart!</p>
-        <Link to="/shop">
+        <Link to={process.env.PUBLIC_URL + '/shop'}>
           <button className="button">View Our Olives</button>
         </Link>
       </div>
@@ -45,10 +45,10 @@ const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, 
           <div className="amount">{formatCurrency(data.delivery_fee)}</div>
           <h3 className="text">Total</h3>
           <div className="amount">{formatCurrency(subTotal + data.delivery_fee)}</div>
-          <Link to="">
+          <Link to={process.env.PUBLIC_URL + '/'}>
             <button className="button" onClick={handlePayment}>Checkout and Pay</button>
           </Link>
-          <Link to="/shop">
+          <Link to={process.env.PUBLIC_URL + '/shop'}>
             <button className="button">Continue Shopping</button>
           </Link>
         </div>

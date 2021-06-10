@@ -42,7 +42,7 @@ const Product = (props) => {
           </select>
           {/* <input defaultValue="1" id="quantity" type="number" min="1"></input> */}
           <div>
-            <Link to="/cart">
+            <Link to={process.env.PUBLIC_URL + '/cart'}>
               <button className="button" onClick={handleAdd}>Add to Basket</button>
             </Link>
           </div>

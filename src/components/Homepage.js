@@ -18,7 +18,7 @@ const Homepage = ({ goToShop }) => {
           products you want, delivered to your door at regular intervals that
           suit you.
         </p>
-        <Link to="/shop">
+        <Link to={process.env.PUBLIC_URL + '/shop'}>
           <button className="homepage-btn">See Our Olives</button>
         </Link>
       </div>

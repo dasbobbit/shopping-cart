@@ -3,17 +3,11 @@ import Shopitem from "./Shopitem";
 import data from "../items.json";
 
 const Productspage = ({ formatCurrency }) => {
-  useEffect(() => {
-    fetchItems();
-  }, []);
-
-  const fetchItems = () => {
-    console.log(data);
-  };
 
   return (
     <div className="shop-container">
-      <h4 className="center">Olives</h4>
+      <h2 className="center">Olives</h2>
+      <p>Take your pick from our wide selection of whole or pitted olives.</p>
       <div className="shop-items">
         {data.products.map((item) => (
             <Shopitem

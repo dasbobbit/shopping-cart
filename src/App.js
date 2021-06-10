@@ -55,8 +55,12 @@ const App = () => {
         setCartItems([...cartItems]);
       }
     });
-    console.log(totalCost);
   };
+
+  const handlePayment = () => {
+    alert('Thank you for shopping with us :)')
+    setCartItems([])
+  }
 
   const formatCurrency = (num) =>
     num.toLocaleString("en-UK", { style: "currency", currency: "GBP" });
@@ -92,6 +96,7 @@ const App = () => {
               updateCartItems={updateCartItems}
               subTotal={totalCost}
               removeItem={removeCartItem}
+              handlePayment={handlePayment}
             />
           </Route>
         </Switch>

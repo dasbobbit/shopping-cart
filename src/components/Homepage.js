@@ -5,7 +5,7 @@ const Homepage = ({ goToShop }) => {
   return (
     <div className="homepage-container">
       <div className="homepage-content">
-        <h3>The Olive Shack</h3>
+        <h3>Olive Hut</h3>
         <p>
           Order fresh Olives via the online store, and have it prepared and
           delivered to your door next day. We have a superb range of
@@ -19,7 +19,7 @@ const Homepage = ({ goToShop }) => {
           suit you.
         </p>
         <Link to="/shop">
-          <button className="button">See Our Olives</button>
+          <button className="homepage-btn">See Our Olives</button>
         </Link>
       </div>
     </div>

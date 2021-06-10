@@ -3,13 +3,13 @@ import CartItem from "./CartItem";
 import data from "../items.json"
 import { Link } from "react-router-dom";
 
-const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, removeItem }) => {
+const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, removeItem, handlePayment }) => {
 
   if (items.length < 1) {
     return (
       <div>
 
-        <p>It's looking a little empty in here...</p>
+        <p>It's looking a little empty in here... Add some olives to your cart!</p>
         <Link to="/shop">
           <button className="button">View Our Olives</button>
         </Link>
@@ -45,8 +45,8 @@ const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, 
           <div className="amount">{formatCurrency(data.delivery_fee)}</div>
           <h3 className="text">Total</h3>
           <div className="amount">{formatCurrency(subTotal + data.delivery_fee)}</div>
-          <Link to="/">
-            <button className="button">Checkout and Pay</button>
+          <Link to="">
+            <button className="button" onClick={handlePayment}>Checkout and Pay</button>
           </Link>
           <Link to="/shop">
             <button className="button">Continue Shopping</button>

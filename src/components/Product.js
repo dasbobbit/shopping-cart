@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import data from "../items.json";
 import { Link } from "react-router-dom" 
 
 const Product = (props) => {
   const item = (data.products.filter(item => props.product.name === item.name))[0]
-  console.log(item)
 
   const handleAdd = () => {
     let _quantity = parseInt(document.getElementById("quantity").value);

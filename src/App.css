@@ -137,10 +137,12 @@
 }
 
 .left-col {
+  grid-area: left-col;
   grid-column: 1 / 2;
 }
 
 .right-col {
+  grid-area: right-col;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -161,16 +163,20 @@
   margin: 0 auto;
 }
 
-.cart-grid, .cart-grid-header {
+.cart-grid, .cart-grid-header, .cart-grid-header-mobile {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   align-items: center;
   height: 40px;
 }
 
-.cart-grid-header {
+.cart-grid-header, .cart-grid-header-mobile {
   color: white;
   background-color: rgb(50, 50, 50);
+}
+
+.cart-grid-header-mobile {
+  display: none;
 }
 
 .cart-grid > h3 {
@@ -236,5 +242,87 @@
 @media screen and (max-width: 650px) {
   .nav-container {
     flex-direction: column;
+  }
+
+  .product-container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "left-col"
+      "right-col"
+    ;
+  }
+
+  .left-col {
+    grid-column: unset;
+  }
+
+  .right-col {
+    grid-column: unset;
+  }
+
+  .product-container > * > img {
+    width: 60%;
+  }
+
+  .cart-container {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .cart-grid-header {
+    display: none;
+  }
+
+  .cart-grid-header-mobile {
+    display: grid;
+  }
+
+  .cart-item-container {
+
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "name price qty qty total"
+      "name price qty qty total"
+    ;
+  }
+
+  .cart-item-img {
+    grid-area: img;
+    display: none;
+  }
+  .cart-item-name {
+    grid-area: name;
+  }
+  .cart-item-price {
+    grid-area: price;
+  }
+  .cart-quantity {
+    grid-area: qty;
+  }
+  .cart-item-total {
+    grid-area: total;
+  }
+  
+  .cart-item-container > * > img {
+    width: 140px;
+  }
+  
+  .cart-item-container > .cart-quantity {
+    /* width: 40%; */
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .cart-item-container > .cart-quantity > .amount {
+    width: 34px;
+  }
+  
+  .cart-item-container > .cart-quantity > .remove {
+    width: 34px;
+    font-weight: 300;
+    text-decoration: underline;
+    color: rgb(255, 0, 0);
+    cursor: pointer;;
   }
 }

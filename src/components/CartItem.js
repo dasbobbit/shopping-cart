@@ -12,11 +12,11 @@ const CartItem = ({ name, quantity, findItem, updateCartItems, formatCurrency, r
 
   return (
     <div className="cart-item-container" >
-      <div className="left">
+      <div className="cart-item-img">
         <img src={item.img_url} alt={item.name} />
       </div>
-      <div className="center">{name}</div>
-      <div>{formatCurrency(item.price100g)}</div>
+      <div className="cart-item-name">{name}</div>
+      <div className="cart-item-price">{formatCurrency(item.price100g)}</div>
       <div className="cart-quantity">
         <input
           onChange={handleChange}
@@ -28,7 +28,7 @@ const CartItem = ({ name, quantity, findItem, updateCartItems, formatCurrency, r
         ></input>
         <div onClick={handleRemove} className="remove">remove</div>
       </div>
-      <div>{formatCurrency(quantity * item.price100g)}</div>
+      <div className="cart-item-total">{formatCurrency(quantity * item.price100g)}</div>
     </div>
   );
 };

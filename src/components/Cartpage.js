@@ -26,6 +26,13 @@ const Cartpage = ({ items, findItem, updateCartItems, subTotal, formatCurrency, 
           <div>Quantity</div>
           <div>Total</div>
         </div>
+        <div className="cart-grid-header-mobile">
+          <div>Item</div>
+          <div>Price</div>
+          <div>Quantity</div>
+          <div></div>
+          <div>Total</div>
+        </div>
         {items.map((item) => (
           <CartItem
             key={item.name}
